@@ -32,6 +32,12 @@ AnalysisWidget::AnalysisWidget()
             SLOT(slotLinkClicked(QUrl)));
     connect(ui.vpcount, SIGNAL(valueChanged(int)), SLOT(slotMpvChanged(int)));
     connect(ui.btPin, SIGNAL(clicked(bool)), SLOT(slotPinChanged(bool)));
+    
+
+    //shortcut = new QShortcut(Qt::Key_Enter, this);
+    shortcut = new QShortcut(Qt::CTRL + Qt::Key_K, this);
+    connect(shortcut, SIGNAL(activated()), this , SLOT(slotPinChanged()));
+
     ui.analyzeButton->setFixedHeight(ui.engineList->sizeHint().height());
 
     m_tablebase = new OnlineTablebase;
@@ -155,6 +161,11 @@ void AnalysisWidget::slotPinChanged(bool pinned)
             m_engine->setMoveTime(0);
         }
     }
+}
+
+void AnalysisWidget::slotPinChanged()
+{
+    emit addVariation(m_analyses[0].variation().at(0).toAlgebraic());
 }
 
 void AnalysisWidget::slotReconfigure()

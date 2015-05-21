@@ -12,6 +12,7 @@
 
 #include "engine.h"
 #include "ui_analysiswidget.h"
+#include <QShortcut>
 #include <QtGui>
 
 /** @ingroup GUI
@@ -78,6 +79,7 @@ private slots:
     void showTablebaseMove(Move move, int score);
     /** The pin button was pressed or released */
     void slotPinChanged(bool);
+    void slotPinChanged();
 
 signals:
     void addVariation(const Analysis& analysis);
@@ -100,6 +102,7 @@ private:
     Board m_NextBoard;
     QString m_tablebaseEvaluation;
     Tablebase* m_tablebase;
+    QShortcut *shortcut;
     int m_moveTime;
     bool m_bUciNewGame;
 
