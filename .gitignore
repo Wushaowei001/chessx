@@ -11,6 +11,11 @@
 *.dylib
 
 # Qt-es
+/bin
+/generated
+/release
+/src/generated
+/obj_rel
 
 /.qmake.cache
 /.qmake.stash
