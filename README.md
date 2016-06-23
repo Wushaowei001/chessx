@@ -1,6 +1,6 @@
-This is a slighty my modded Version of ChessX.
+This is a slighty modded Version of ChessX.
 
-I added 3 Shortcuts:
+Added 3 Shortcuts:
 
 Press Key:
 + Space to force an Engine Move
